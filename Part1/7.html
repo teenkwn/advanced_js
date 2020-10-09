@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let input_1 = prompt("enter first number")
+        let input_2 = prompt("enter second number")
+        let input_3 = prompt("enter third number")
+        let all = [input_1,input_2,input_3]
+        function gcd_numbers(array_number) {
+            let len = array_number.length
+            let a, b
+                if ( !len ) {
+                    return null;
+                }
+                a = array_number[ 0 ];
+                for ( var i = 1; i < len; i++ ) {
+                    b = array_number[ i ];
+                    a = gcd_two( a, b );
+                }
+                return a;
+        }
+        function gcd_two(x, y) {
+            x = Math.abs(x);
+            y = Math.abs(y);
+            while(y) {
+                var t = y;
+                y = x % y;
+                x = t;
+            }
+            return x;
+        }
+        alert(gcd_numbers(all))
+
+    </script>
+</body>
+</html>

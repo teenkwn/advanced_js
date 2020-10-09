@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function dotProduct(vector1, vector2) {
+            if(vector1.length > vector2.length) {
+                    let diff = vector1.length - vector2.length
+                    for(let i =1; i<=diff;i++) {
+                        vector2.push(0)
+                    }
+            } else if(vector1.length < vector2.length){
+                    let diff = vector2.length - vector1.length
+                    for(let i =1; i<=diff;i++) {
+                        vector1.push(0)
+                    }
+            } else {
+                let diff = 0
+            }
+            let sum = 0;
+            for(let j = 0;j<vector1.length;j++) {
+                sum += (vector1[j]*vector2[j])
+            }
+            return sum
+        }
+
+        alert(dotProduct([2,3],[1,2]))
+    </script>
+</body>
+</html>
+

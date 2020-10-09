@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function evenArraySum(number) {
+            let array = []
+            let string = number.toString()
+            let stringResult = ""
+            for(let i = 0 ;i<string.length;i++) {
+                array.push(string.charAt(i))
+            }
+            let newArray = array.sort(function(a, b){return b-a});
+            for(let i = 0 ;i<string.length;i++) {
+                stringResult += newArray[i]
+            }
+            return stringResult
+        }
+        alert(evenArraySum(12342))
+    </script>
+</body>
+</html>
+

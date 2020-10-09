@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let boo_value = prompt("true or false")
+        let number =[5,2,80]
+        // alert(number.sort())
+        function check(list,boo) {
+            if(boo=="true") {
+                list.sort(function(a, b){return a-b});
+                return list
+            } else if(boo=="false"){
+                list.sort(function(a, b){return b-a});
+                return list
+            }
+        }
+        alert(check(number,boo_value));
+    </script>
+</body>
+</html>

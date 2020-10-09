@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let thousand = 0;
+        let five_hun = 0;
+        let one_hun = 0;
+        let five_ten = 0;
+        let two_ten = 0;
+        let ten = 0;
+        let five = 0;
+        let two = 0;
+        let one = 0;
+        function toChange(money) {
+            while(money>1000) {
+                thousand += 1
+                money -= 1000
+            }
+            if(money > 500) {
+                five_hun += 1
+                money -=500
+                while(money>100) {
+                    one_hun +=1
+                    money -= 100
+                }
+            }
+            if(money> 50) {
+                five_ten +=1
+                money -= 50
+                while(money>20) {
+                    two_ten +=1
+                    money -=20
+                }
+                while(money>10) {
+                    ten += 1
+                    money -=10
+                }
+            }
+            if(money> 5) {
+                five +=1
+                money -=5
+                while(money>2) {
+                    two +=1
+                    money -=2
+                }
+                while(money>1) {
+                    one +=1
+                    money -=1
+                }
+            }   
+            return "แบงค์พัน" + thousand.toString() + "ใบ /แบงค์ห้าร้อย" + five_hun.toString() +"ใบ /แบงค์ร้อย" + one_hun.toString() +"ใบ / แบงค์ห้าสิบ" + five_ten.toString() + "ใบ / แบงค์ยี่สิบ" + two_ten.toString() +"ใบ / เหรียญสิบ" + ten.toString() +"เหรียญ / เหรียญห้า" + five.toString() +"เหรียญ/เหรียญสองบาท" + two.toString() + "เหรียญ / เหรียญบาท" + one.toString() + "เหรียญ"
+        }
+        alert(toChange(788))
+    </script>
+</body>
+</html>

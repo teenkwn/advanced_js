@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let inputNum = prompt("enter Number")
+        let array =[]
+        let i = 2
+        let sum = 0
+        while(array.length < inputNum) {
+               if(primeNum(i)) {
+                   array.push(i);
+               }
+               i++
+        }
+        for ( let k=0 ; k<array.length ; k++ ) {
+            let numOfArray = parseInt(array[k])
+            sum = sum + numOfArray
+        }
+        alert(sum)
+
+        function primeNum(x) {
+            let number = x
+            let checkNumber = parseInt(Math.sqrt(number))
+            let result = true
+            for (let i = 2;i <=checkNumber;i++) {
+                if(number%i==0) {
+                    result = false
+                    break;
+                }
+            }
+            return result
+        }
+    </script>
+</body>
+</html>

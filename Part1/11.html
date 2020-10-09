@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let boo_value = prompt("true or false")
+        let number =[5,2,80]
+        function max_to_least(array) {
+            var t = 0;
+            for (var i = 0; i < array.length; i++) {
+                for (var j = i; j < array.length; j++) {
+                    if (array[j] < array[i]) {
+                        t = array[j];
+                        array[j] = array[i];
+                        array[i] = t;
+                    }
+                }
+            }
+            return array;
+        }
+        function check(list,boo) {
+            if(boo=="true") {
+                let len = number.length
+                let i = 1
+                let less = ""
+                while (i < len) {
+                    var j = 0;
+                    while (j < len - i) {
+                        if (number[j] > number[j + 1]) { 
+                            var newNum = number[j + 1];
+                            number[j + 1] = number[j];
+                            number[j] = newNum;
+                        }
+                        j++;
+                    }
+                    i++;
+                    result_1 += number + "\n";
+                }
+                return result_1
+            } else {
+                let result_2 = max_to_least(list)
+                return result_2
+            }
+        }
+        alert(check(number,boo_value));
+    </script>
+</body>
+</html>

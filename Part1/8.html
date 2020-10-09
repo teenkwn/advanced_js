@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 = prompt("enter first num")
+        let num2 = prompt("enter second num")
+        let num3 = prompt("enter third num")
+        let num4 = prompt("enter forth num")
+        let array_number = [num1,num2,num3,num4]
+        function lcm_numbers(array_number) {
+            let a = 0
+            let b = 0
+            var len = array_number.length
+            for( i=0 ; i<len ; i++) {
+                a = array_number[i] % array_number[i + 1];
+                if(a === 0) {
+                    array_number[i + 1] = (array_number[i] * array_number[i+1]) / array_number[i + 1];
+                }
+                else {
+                    b = array_number[i + 1] % a;
+                    if(b === 0) {
+                        array_number[i + 1] = (array_number[i] * array_number[i + 1]) / a;
+                    }
+                    else {
+                        array_number[i+1] = (array_number[i] * array_number[i + 1]) / b;
+                    }
+                }
+            }
+            return array_number[len - 1];
+        }
+        alert(lcm_numbers(array_number))
+    </script>
+</body>
+</html>

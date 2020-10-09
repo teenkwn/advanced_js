@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = prompt("enter Number")
+        let sum = 0;
+        for(let i = 1 ; i <= n ; i++ ) {
+            let primeNumber = primeNum(i)
+            if(primeNumber==true) {
+                sum= sum - i
+            } else {
+                sum = sum + i
+            }
+        }
+        function primeNum(x) {
+            let number = x
+            let checkNumber = parseInt(Math.sqrt(number))
+            let result = true
+            for (let i = 2;i <=checkNumber;i++) {
+                if(number%i==0) {
+                    result = false
+                    break;
+                }
+            }
+            return result
+        }
+        alert(sum)
+    </script>
+</body>
+</html>

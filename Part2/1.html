@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let string = prompt("enter your string")
+        function checkCharacter(string) {
+            if(string.toUpperCase()==string) {
+                string = "All character are capital"
+            } else if(string.toLowerCase() == string) {
+                string = "All character are small"
+            } else {
+                string = "All character are mix"
+            }
+            return string
+        }
+        alert(checkCharacter(string))
+    </script>
+</body>
+</html>

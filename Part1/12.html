@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = 1000
+        let num1 = 3
+        let num2 = 5
+        let sum = 0
+
+        function multiply_three(sum) {
+            sum = sum+ num1
+            return sum
+        }
+        function multiply_five(sum) {
+            sum = sum+ num2
+            return sum
+        }
+
+        while(sum<1000) {
+            sum = multiply_three(sum)
+            num1 *= 2
+            if(sum < 1000) {
+                sum = multiply_five(sum)
+                num2 *= 2
+            }
+        }
+        alert(sum)
+
+    </script>
+</body>
+</html>
